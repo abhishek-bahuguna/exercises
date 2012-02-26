@@ -1,0 +1,92 @@
+
+html, body{
+margin: 10;
+padding: 0;
+}
+
+h1{
+margin: 0;
+padding: 0;
+}
+
+#main-container{
+width: 75%;
+margin: auto;
+}
+
+#header{
+height: 150px;
+background: yellow;
+border-radius: 10px;
+}
+
+#main-area{
+width: 100%;
+}
+
+#content{
+padding:5px;
+width: 80%;
+float: left;
+font-family: Tahoma, Arial, Helvetica, Sans-serif;
+font-size: 15px;
+color: #505050;
+text-align: justify;
+}
+
+#right-navigation{
+padding:5px;
+padding-top: 50px;
+width: 13.5%;
+float: left;
+}
+
+#right-navigation ul{
+list-style-type: none;
+}
+
+.button{
+background: #d3d3d3;
+display: inline-block;
+position: relative;
+margin: 10px;
+padding: 0 20px;
+text-align: center;
+width: 60%;
+text-decoration: none;
+font: bold 12px/25px Tahoma, Arial, Helvetica, Sans-serif;
+border-radius: 10px;
+word-wrap: true;
+}
+
+#right-navigation a {
+color: #505050;
+text-decoration: none;
+}
+
+#right-navigation a:hover {
+color: #E3170D;
+}
+
+
+#footer{
+padding: 10px;
+clear: both;
+height: 12px;
+font-family: Tahoma, Arial, Helvetica, Sans-serif;
+font-size: 12px;
+background:#d3d3d3;
+}
+
+#footnav{
+float: right;
+}
+
+#footer a {
+text-decoration: none;
+}
+
+#footer a:hover {
+color: #E3170D;
+}
+
