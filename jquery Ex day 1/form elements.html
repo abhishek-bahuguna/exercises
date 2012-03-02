@@ -33,6 +33,7 @@
 			  
 			  $("input:disabled").val("this is disabled");
 			  
+		  
 			  $('#button5').toggle(function() {
                   $("input:file").css("border", "3px solid red");
               }, function() {
@@ -62,6 +63,19 @@
               }, function() {
                   $("form input:text").parent().css("border", "");
               });
+			  
+			  $('#button10').toggle(function() {
+				$("input:disabled").css("border", "3px solid red");
+              }, function() {
+                  $("input:disabled").css("border", "");
+              });
+			  
+			  $('#button11').toggle(function() {
+                  $("form input:checkbox").css("outline", "3px solid red");
+              }, function() {
+                  $("form input:checkbox").css("outline", "");
+              });
+			  
 			  
           });
       </script>
@@ -164,6 +178,8 @@
   <input type="button" id="button7" value="Reset Selector"/>
   <input type="button" id="button8" value="Submit Selector"/>
   <input type="button" id="button9" value="Text Selector"/>
+   <input type="button" id="button10" value="Disabled border"/>
+      <input type="button" id="button11" value="Checkbox outline"/>
   
   
   </body>

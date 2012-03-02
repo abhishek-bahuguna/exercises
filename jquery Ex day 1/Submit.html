@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Events with jQuery</title>
+	  <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript">
+          $(function() {
+              // Bind highlight function on mouseover & mouseleave event on evtTarget element
+              // unbind highlight function on click event on evtTarget element
+			 
+			 $("#target").change(function(){
+		  $("#target").css("background-color", "red");
+		  });
+			 
+			  
+			$("#target2").select(function(){
+		$("#target2").css("background-color", "red");
+		});  
+		
+			$("#target3").click(function(){
+			$("#target3").toggleClass("styles");
+			});
+		  
+			$("#target4").hover(function(){
+			$("#target4").toggleClass("styles");
+			});
+			
+			
+			$("#target5").focus(function(){
+			$("#target5").css("background-color", "red");
+			});
+			$("#target5").blur(function(){
+			$("#target5").css("background-color", "purple");
+			});
+
+			
+			$("form").submit(function(){
+			alert("Submitted");
+			});
+			  
+          });
+
+		  function highlight(evt) {
+              $("#evtTarget").toggleClass("highlighted");
+          }
+		  
+
+
+		  
+          
+      </script>
+      <style type='text/css'>
+          .normal {
+              width: 400px;
+              height: 100px;
+              background-color: Yellow;
+              font-size: 18pt;
+          }
+
+          .highlighted {
+              background-color: Red;
+          }
+		  
+		  .styles {
+			font-family: Tahoma, Arial, Helvetica, Sans-serif;
+			font-size: 30px;
+			color: cyan;
+		  }
+      </style>
+  </head>
+  <body>
+  <h1>
+      Example Form Document</h1>
+
+  <form action="" method="post">
+
+      <table class="style1">
+          <tbody>
+          <tr>
+              <td class="style2">
+                  First Name
+              </td>
+              <td>
+                  <input id="FirstName" type="text"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Last Name
+              </td>
+              <td>
+                  <input id="LastName" type="text"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Disabled Element
+              </td>
+              <td>
+                  <input id="Text1" type="text" disabled="disabled"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Gender
+              </td>
+              <td>
+                  <input id="Male" type="radio" checked="checked"/>M<input id="Female" type="radio"/>F
+              </td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  What products are you interested in?
+              </td>
+              <td>
+                  <input id="Checkbox1" type="checkbox" checked="checked"/><label for="Checkbox1">Widgets</label><br/>
+                  <input id="Checkbox2" type="checkbox"/><label for="Checkbox1">Hibbity Jibbities</label><br/>
+                  <input id="Checkbox3" type="checkbox" checked="checked"/><label
+                      for="Checkbox1">SplashBangers</label><br/>
+                  <input id="Checkbox4" type="checkbox"/><label for="Checkbox1">Whatzits</label></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Comments:
+              </td>
+              <td>
+                  <textarea id="Comments" cols="40" name="S1" rows="5"></textarea></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  Optional life story file
+              </td>
+              <td>
+                  <input id="File1" type="file"/></td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  &nbsp;</td>
+          </tr>
+          <tr>
+              <td class="style2">
+                  &nbsp;</td>
+              <td>
+                  <input id="Submit1" type="submit" value="submit"/>
+                  <input id="Reset1" type="reset" value="reset"/></td>
+          </tr>
+          </tbody>
+      </table>
+
+  </form>
+  
+  <h1>Binding Event Example</h1>
+   <input class="normal" id="target" type="text" value="Change this text"/>
+   </br>
+  <input class="normal" id="target2" type="text" value="Select this text"/>
+  </br>
+  <input class="normal" id="target3" type="text" value="Click this text box"/>
+   </br>
+  <input class="normal" id="target4" type="text" value="Hover over this text box"/>
+   </br>
+  <input class="normal" id="target5" type="text" value="Click here to Blur"/>
+  
+  
+  
+  </body>
+  </html>
