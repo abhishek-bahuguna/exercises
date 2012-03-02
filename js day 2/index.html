@@ -1,0 +1,37 @@
+<!doctype html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Todo Application</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <style type="text/css" media="all">@import "master.css";</style>
+ <script type="text/javascript" src="masterjs.js"></script>
+ </head>
+ <body>
+     <div id="top">
+     <br/>
+     <input type="text" name="search" id = "search" value="" style-align="right"/>
+     <input type="button" onclick="search()" value="Google Search" style-align="right">
+     </div>
+     <div id="content">
+     <h1>Todos !</h1>
+         <br/>
+         <table width=100%>
+             <tr>
+                 <td><h3>What needs to get done today?</h3></td>
+                 <td align="right"><input type="text" name="count" id = "count" value="" disabled="true" style="border: 0px solid #000000; background: #E6E8FA"/></td>
+             </tr>    
+         </table>
+     <input type="text" name="nameOfItem" id = "nameOfItem" value=""/>
+     <input type="button" onclick="addTodo()" value="Add Todo">
+     <br/>
+     <br/>     
+     <ol id="list">
+         <li>This is my first item to do!!</li>
+     </ol>
+     </div>
+     
+ </body>
+ </html>
+
