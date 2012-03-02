@@ -65,15 +65,67 @@ Example Html -
 			});
 			
 			
-			// Not working
 			$('#button11').toggle(function() {
-              ($("#select").wrap("<div></div>");
+              $("li:first").wrap("<div></div>");
 			}, function() {
-			  ($("#select").unwrap();
+			  $("li:first").unwrap();
+			});
+			
+			$('#button12').toggle(function() {
+              $("p:first").wrapInner("<b></b>");
+			}, function() {
+			  $("p:first").contents().contents().unwrap();
+			});
+			
+		
+		// QUESTION - Unable to remove the appended child using prepend.
+			$('#button13').toggle(function() {
+			  $("#list1").prepend("Prepended Child");
+			  $("ul:first-child").attr("id", "prechild");
+			}, function() {
+			  $("#list1").contents().remove("#prechild");
 			});
 			
 			
-			// The exercise is incomplete. Need to try out traversing.
+			$('#button14').click(function() {
+              $("p:first").insertAfter("p:last");
+			});
+			
+			
+			$('#button15').click(function() {
+              $("li:last").remove();
+			});
+			
+			
+			$('#button16').click(function() {
+              $("body").find("p:last").css("border", "3px solid green");
+			});
+			
+			
+			$('#button16').toggle(function() {
+			 $("body").find("p:last").css("border", "3px solid green");
+			}, function() {
+			  $("body").find("p:last").css("border", "");
+			});
+			
+			
+			$('#button17').toggle(function() {
+			 $('li').slice(2).css('background-color', 'red');
+			}, function() {
+			 $('li').slice(2).css('background-color', '');
+			});
+			
+			
+			
+			$('#button18').toggle(function() {
+			$('li').filter(':even').css('background-color', 'red');
+			}, function() {
+			$('li').filter(':even').css('background-color', '');
+			});
+
+
+
+		
 			
 			  
           });
@@ -82,7 +134,7 @@ Example Html -
         .a { color: Navy; }
         .b { color: Maroon; }
 		.button {width: 200px;}
-		div { border: 2px solid blue; }
+		div { border: 2px solid blue; width:10%; }
       </style>
   </head>
   <body>
@@ -118,6 +170,13 @@ Example Html -
 	  </br> <input type="button" id="button9" class="button" value="Get Offset for 1st li" />
 	  </br> <input type="button" id="button10" class="button" value="Clone" />
 	  </br> <input type="button" id="button11" class="button" value="Wrap / UnWrap" />
+	  </br> <input type="button" id="button12" class="button" value="WrapInner" />
+	  </br> <input type="button" id="button13" class="button" value="Prepend" />
+	  </br> <input type="button" id="button14" class="button" value="Insert After" />
+	  </br> <input type="button" id="button15" class="button" value="Remove last li" />
+	  </br> <input type="button" id="button16" class="button" value="Find & eq" />
+	  </br> <input type="button" id="button17" class="button" value="Slice" />
+	  </br> <input type="button" id="button18" class="button" value="Filter" />
 	  
   </body>
   </html>

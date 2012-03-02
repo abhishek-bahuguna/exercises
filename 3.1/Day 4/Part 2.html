@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>jQuery Showing and Hiding an Element</title>
+     <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript">
+          $(function() {
+              // Show, hide and toggle theDiv element
+              // Animate and grow the width, font size, and position of theDiv element
+              // Fade In, Out
+              // Slide In, out, Toggle
+			  
+			  $('#hide').click(function() {
+                $("#theDiv").hide("fast"); 
+              });
+			  
+			  
+			  $('#show').click(function() {
+                $("#theDiv").show("fast"); 
+			  });
+			  
+			  
+			  $('#toggle').click(function() {
+                $("#theDiv").toggle("slow"); 
+			  });
+			  
+			  $("#right").click(function () {
+				  $("div").css("width", "400");
+			 });
+			 
+			 
+			 $("#text").click(function () {
+				  $("div").wrapInner("<h3></h3>").css("color", "white");
+			 });
+			 
+			
+			 $('#movediv').click(function(){
+				 $('div').animate({
+				 'marginLeft' : "+=50px"
+			});
+			});
+			 
+			 
+			 $("#fadeout").click(function () {
+				  $("div").fadeOut("slow");
+		     });
+			 
+			 
+			$("#fadein").click(function () {
+				  $("div").fadeIn("slow");
+		     });
+			 
+			 
+			 $("#fadeto3").click(function () {
+				  $("div").fadeTo("slow", 0.3);
+			 });
+			 
+			 
+			 $("#fadeup").click(function () {
+				  $("div").fadeTo("slow", 1.0);
+			 });
+
+							  
+			$('#slideup').click(function () {
+				  $("div").slideUp();
+			  });  
+			  
+			$('#slidedown').click(function () {
+				  $("div").slideDown();
+			  });  
+
+			$("#slidetoggle").click(function () {
+				  $("div").slideToggle("slow");
+			 });
+			  
+          });
+      </script>
+      <style type="text/css">
+          div#theDiv {
+              width: 250px;
+              height: 180px;
+              margin: 10px;
+              padding: 20px;
+              background: blue;
+              border: 2px solid black;
+              cursor: pointer;
+          }
+          p, span {
+              font-size: 16pt;
+          }
+          button {
+              margin: 5px;
+          }
+      </style>
+  </head>
+  <body>
+      <p id="theP">Effects of Jquery !!!</p>
+      <div id="theDiv">
+			Showing and Hiding an Element
+      </div>
+	  <button id="hide">Hide</button>
+      <button id="show">Show</button>
+      <button id="toggle">Toggle</button>
+      <button id="right">Grow Right</button>
+      <button id="text">Big Text</button>
+      <button id="movediv">Move Div</button>
+      <button id="fadeout">Fade Out</button>
+      <button id="fadein">Fade In</button>
+      <button id="fadeto3">Fade To .3</button>
+      <button id="fadeup">Fade To 1.0</button>
+      <button id="slideup">Slide Up</button>
+      <button id="slidedown">Slide Down</button>
+      <button id="slidetoggle">Toggle Slide</button>
+  </body>
+  </html>
