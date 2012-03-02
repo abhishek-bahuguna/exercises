@@ -1,0 +1,168 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <title>Document</title>
+<script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+      $("document").ready(function() {
+          // Example
+          // Use basic selectors, basic filters, attribute selectors, content filters, hierarchy filters
+          
+		  $('#button1').toggle(function() {
+              $("*").css("border", "3px solid green");
+          }, function() {
+              $("*").css("border", "");
+          });
+		  	  
+		  $('#button2').toggle(function() {
+              $("p").css("border", "3px solid red");
+          }, function() {
+              $("p").css("border", "");
+          });
+		  
+		  $('#button3').toggle(function() {
+              $("#list1").css("border", "3px solid red");
+          }, function() {
+              $("#list1").css("border", "");
+          });		  
+		  
+		  $('#button4').toggle(function() {
+              $(".a").css("border", "3px solid red");
+          }, function() {
+              $(".a").css("border", "");
+          });	
+		  
+		  $('#button5').toggle(function() {
+              $("li,#list1,.b").css("border", "3px solid red");
+          }, function() {
+              $("li,#list1,.b").css("border", "");
+          });	
+		  
+		  $('#button6').toggle(function() {
+              $('[id]').css("border", "3px solid red");
+          }, function() {
+              $('[id]').css("border", "");
+          });
+		  
+		  $('#button7').toggle(function() {
+              $('[id*="1"]').css("border", "3px solid red");
+          }, function() {
+              $('[id*="1"]').css("border", "");
+          });
+		  
+		  $('#button8').toggle(function() {
+              $('[id$="1"]').css("border", "3px solid red");
+          }, function() {
+              $('[id$="1"]').css("border", "");
+          });
+		  
+		  $('#button9').toggle(function() {
+              $("li:first").css("border", "3px solid red");
+          }, function() {
+              $("li:first").css("border", "");
+          });
+		  
+		  $('#button10').toggle(function() {
+              $("li:last").css("border", "3px solid red");
+          }, function() {
+              $("li:last").css("border", "");
+          });
+		  
+		  $('#button11').toggle(function() {
+              $("li:even").css("border", "3px solid red");
+          }, function() {
+              $("li:even").css("border", "");
+          });
+		  
+		  $('#button12').toggle(function() {
+              $("li:odd").css("border", "3px solid red");
+          }, function() {
+              $("li:odd").css("border", "");
+          });
+		  
+		  $('#button13').toggle(function() {
+              $("li:contains('item')").css("border", "3px solid red");
+          }, function() {
+              $("li:contains('item')").css("border", "");
+          });
+		  
+		  $('#button14').toggle(function() {
+              $("li:empty").css("border", "3px solid red");
+          }, function() {
+              $("li:empty").css("border", "");
+          });
+		  
+		  $('#button15').toggle(function() {
+              $("div:has(p)").css("border", "3px solid red");
+          }, function() {
+              $("div:has(p)").css("border", "");
+          });
+		  
+		  $('#button16').toggle(function() {
+              $("div:hidden").show(1000);
+          }, function() {
+              $("#hidden").hide(1000);
+          });
+		  
+		  $('#button17').toggle(function() {
+              $("#div1 > p").css("border", "3px solid red");
+          }, function() {
+              $("#div1 > p").css("border", "");
+          });
+		  
+      });
+  </script>
+  <style type="text/css">
+  .a { color: Navy; }
+  .b { color: Maroon; }
+  </style>
+  </head>
+  <body>
+      <ul id="list1">
+          <li class="a">item 1</li>
+          <li class="a">item 2</li>
+          <li class="b">item 3</li>
+          <li class="b">item 4</li>
+		  <li></li>
+      </ul>
+	  <div id="div1">
+      <p class="a">This is paragraph 1</p>
+      <p>This is paragraph 2</p>
+	  </div>
+      <p class="b">This is paragraph 3</p>
+      <p>This is paragraph 4</p>
+	  
+	  <div id = "hidden" style="display:none;"><h3>Hidden Div</h3></div>
+	  <br/>
+	  
+	  
+      <!-- Add multiple buttons for each selector -->
+     1)<input type="button" id="button1" value="Select All Elements" />
+	  <input type="button" id="button2" value="Select All Ps" />
+	  <input type="button" id="button3" value="Select using Id" />
+	  <input type="button" id="button4" value="Select using Class" />
+	  <input type="button" id="button5" value="Multiple selectors" />
+	  
+	 <br/>2) <input type="button" id="button6" value="All ID attributes" />
+	  <input type="button" id="button7" value="All ID with sub as 1" />
+	  <input type="button" id="button8" value="ID ending with 1" />
+	  
+	  
+	  <br/>3) <input type="button" id="button9" value="First li" />
+	  <input type="button" id="button10" value="Last li" />
+	  <input type="button" id="button11" value="Even li" />
+	  <input type="button" id="button12" value="Odd li" />
+	  
+	  <br/>4) <input type="button" id="button13" value="Li containing item word" />
+	  <input type="button" id="button14" value="Empty li" />
+	  <input type="button" id="button15" value="Div having p" />
+	  
+	  <br/>5) <input type="button" id="button16" value="Select hidden div" />
+	  
+	  <br/>6) <input type="button" id="button17" value="div1 child elements" />
+
+	  
+	  
+	  
+	  
+  </body>
+  </html>

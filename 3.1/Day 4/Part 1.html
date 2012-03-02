@@ -1,0 +1,123 @@
+Example Html -
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Document</title>
+      <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript">
+          $("document").ready(function() {
+              // Change html,
+              // Add handling for creating elements, append, prepend and warp around elements
+			  
+			$('#button1').toggle(function() {
+              $(".a").addClass("b");
+			}, function() {
+              $(".a").removeClass("b");
+			});
+			
+			
+			$('#button2').click(function() {
+              alert($("li").attr("class"));
+			});
+			  
+			  
+			$('#button3').click(function() {
+              alert($("li:first").hasClass("a"));
+			});
+			
+		
+			$('#button4').click(function() {
+              alert($('p[class]="a"').html());
+			});
+			
+			
+			$('#button5').click(function() {
+              alert($("li:last").text());
+			});
+			
+			
+			$('#button6').click(function() {
+              alert($("#select").val());
+			});
+			
+			
+			$('#button7').toggle(function() {
+              ($("p:first").html("This p has been changed"));
+			}, function() {
+			  ($("p:first").html("This is paragraph 1"));
+			});
+			
+			
+			$('#button8').toggle(function() {
+              ($("li:first").html("Item changed"));
+			}, function() {
+			  ($("li:first").html("item 1"));
+			});
+			
+			
+			$('#button9').click(function() {
+			  var a = $("li:first").offset();
+              alert('Left:'+a.left+ ' Top:' + a.top);
+			});
+			
+			
+			$('#button10').click(function() {
+              ($("p:first").clone().appendTo("p:first"));
+			});
+			
+			
+			// Not working
+			$('#button11').toggle(function() {
+              ($("#select").wrap("<div></div>");
+			}, function() {
+			  ($("#select").unwrap();
+			});
+			
+			
+			// The exercise is incomplete. Need to try out traversing.
+			
+			  
+          });
+      </script>
+      <style type="text/css">
+        .a { color: Navy; }
+        .b { color: Maroon; }
+		.button {width: 200px;}
+		div { border: 2px solid blue; }
+      </style>
+  </head>
+  <body>
+      <ul id="list1">
+          <li class="a">item 1</li>
+          <li class="a">item 2</li>
+          <li class="b">item 3</li>
+          <li class="b">item 4</li>
+      </ul>
+      <p class="a">This is paragraph 1</p>
+      <p>This is paragraph 2</p>
+      <p class="b">This is paragraph 3</p>
+      <p>This is paragraph 4</p>
+	  
+	<p>  
+	<select id="select" value="">
+		<option value="" style="display:none;"></option>
+		<option>Option 1</option>
+		<option>Option 2</option>
+		<option>Option 3</option>
+		<option>Option 4</option>
+	</select>
+	</p>
+	
+	  </br> <input type="button" id="button1" class="button" value="addClass / removeClass" />
+	  </br> <input type="button" id="button2" class="button" value="Get class attr for 1st li" />
+	  </br> <input type="button" id="button3" class="button" value="1st li has class a?" />
+	  </br> <input type="button" id="button4" class="button" value="Get HTML 1st p" />
+	  </br> <input type="button" id="button5" class="button" value="Get text of last li" />
+	  </br> <input type="button" id="button6" class="button" value="Get value of select" />
+	  </br> <input type="button" id="button7" class="button" value="Set HTML for 1st p" />
+	  </br> <input type="button" id="button8" class="button" value="Set text for 1st li" />
+	  </br> <input type="button" id="button9" class="button" value="Get Offset for 1st li" />
+	  </br> <input type="button" id="button10" class="button" value="Clone" />
+	  </br> <input type="button" id="button11" class="button" value="Wrap / UnWrap" />
+	  
+  </body>
+  </html>
