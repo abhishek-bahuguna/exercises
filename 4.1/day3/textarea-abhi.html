@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Text Area counter</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+			var characters= 10;
+			$('.counter').html(characters); 
+		
+		jQuery.fn.chklimit = function(){ 	
+		var currentObject = $(this); 
+		currentObject.keyup(function(){
+			$('.counter').html(characters-($("#txtarea").val().length)); 
+		})
+		}
+		
+		jQuery.fn.makeMeRed = function(){ 	
+		var currentObject = $(this); 
+		currentObject.css("background","Red");
+		}
+		
+		
+		jQuery.fn.chng2Uppercase = function(){ 	
+		var currentObject = $(this); 
+		var str = currentObject.html();
+		currentObject.html(str.toUpperCase());
+		}
+		
+		
+		$('#txtarea').chklimit();
+		$('#txtarea2').chklimit();
+		
+		
+		 $("#button1").click(function(){
+			$("#uprcse").chng2Uppercase();
+			});
+			
+		$("#button2").click(function(){
+			$("p").makeMeRed();
+			});
+		
+        });
+</script>
+
+</head>
+
+<body>
+<div class="demo">
+<div>
+<Label for="txtarea">Tags: </Label>
+<textarea id='txtarea' maxlength='10'></textarea>
+<span  class="counter"></span> characters remaining
+</div>
+
+
+<p>This is made red by using a function <input type="button" id="button2" value="Turn background red" /></p>
+
+
+<div id="uprcse">change this to upper case <input type="button" id="button1" value="To Upper Case" /></div>
+
+
+</div>
+
+</body>
+</html>
