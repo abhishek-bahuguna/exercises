@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+      <title>Events with jQuery</title>
+	  <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript">
+          $(function() {
+              // Bind highlight function on mouseover & mouseleave event on evtTarget element
+              // unbind highlight function on click event on evtTarget element
+			 
+			 $("#target").change(function(){
+		  $("#target").css("background-color", "red");
+		  });
+			 
+			  
+			$("#target2").select(function(){
+		$("#target2").css("background-color", "red");
+		});  
+		
+			$("#target3").click(function(){
+			$("#target3").toggleClass("styles");
+			});
+		  
+			$("#target4").hover(function(){
+			$("#target4").toggleClass("styles");
+			});
+			
+			
+			$("#target5").focus(function(){
+			$("#target5").css("background-color", "red");
+			});
+			$("#target5").blur(function(){
+			$("#target5").css("background-color", "purple");
+			});
+
+			
+			
+			  
+          });
+
+		  function highlight(evt) {
+              $("#evtTarget").toggleClass("highlighted");
+          }
+		  
+
+
+		  
+          
+      </script>
+      <style type='text/css'>
+          .normal {
+              width: 400px;
+              height: 100px;
+              background-color: Yellow;
+              font-size: 18pt;
+          }
+
+          .highlighted {
+              background-color: Red;
+          }
+		  
+		  .styles {
+			font-family: Tahoma, Arial, Helvetica, Sans-serif;
+			font-size: 30px;
+			color: cyan;
+		  }
+      </style>
+  </head>
+  <body>
+  <h1>Binding Event Example</h1>
+   <input class="normal" id="target" type="text" value="Change this text"/>
+   </br>
+  <input class="normal" id="target2" type="text" value="Select this text"/>
+  </br>
+  <input class="normal" id="target3" type="text" value="Click this text box"/>
+   </br>
+  <input class="normal" id="target4" type="text" value="Hover over this text box"/>
+   </br>
+  <input class="normal" id="target5" type="text" value="Click here to Blur"/>
+  </body>
+  </html>
